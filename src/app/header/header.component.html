@@ -1,0 +1,113 @@
+<link rel="icon" type="image/png" href="logo.png">
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <img id="logo" src="https://widget-stage.deluxe.com/images/deluxe-small-biz.svg">
+      <label>{{title}}</label>
+    </div>
+  </nav>
+
+
+  <br />
+  <br /><br />
+  <div class="row">
+
+    <div class="col-md-1 col-sm-1 col-lg-1"> </div>
+
+
+    <div class="col-md-7 col-sm-7 col-lg-7 left left_pannel">
+      <label> </label>&nbsp;
+      <div id="curtain" style="border:1px dashed red;width:initial;height:436px;">
+        &nbsp;
+        <canvas id="myCanvas" width="699px" height="410px" style="top:10px;left:11px">
+
+        </canvas></div>
+      <img *ngIf="uploadNewImage" style="position: absolute; bottom:20px;" [src]="url" height="200" width="200">
+    </div>
+
+    <div class="col-md-1 col-sm-1 col-lg-1"> </div>
+
+    <div class="col-md-3  col-sm-3 col-lg-3 right right_pannel">
+
+      <div class="row">
+        <label class="switch">
+          <input [(ngModel)]="theCheckbox" type="checkbox" (change)="add($event)">
+          <span class="slider round"></span>
+        </label>
+
+        &nbsp;&nbsp;&nbsp;
+        <!-- <button id="zoomin" (click)=zoom($event)>+</button> -->
+        <button id="zoomin" type="button" class="btn btn-default btn-circle btn-lg" (click)=zoomin($event)>+
+        </button>
+        &nbsp;&nbsp;
+        <button id="zoomout" type="button" class="btn btn-default btn-circle btn-lg" (click)=zoomout($event)>-
+        </button>
+
+
+        &nbsp;&nbsp; &nbsp;&nbsp;
+        <!-- <button id="zoomin">+</button>
+                    <button id="zoomout">-</button> &nbsp;&nbsp; -->
+        <input type="text" class="form-control" [(ngModel)]="textString">
+        <button id="add" class="btn btn-primary add_text btn-lg" type="button">Add Text</button>
+
+         <b></b> Upload File :</b>
+        <input type="file" id="uploadUserImage" (change)="onSelectFile($event)" value="Add Iamge" #uploadUserImage>
+      </div>
+      <!--text parameters-->
+      <textarea id="text-cont"></textarea>
+      <br>
+      
+      <br>
+     
+      <div class="text_alter">  <p><b>Font-Family :</b></p>
+          <select class="select2 font-change" data-type="fontFamily">
+          <option value="Font">Select</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Arial">Arial</option>
+          <option value="Arial Black">Arial Black</option>
+          <option value="cursive">cursive</option>
+          <option value="fantasy">fantasy</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Bookman">Bookman</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <br>
+        <br>
+        <select class="select2 font-change" data-type="fontSize">
+          <option value="10">10</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="20">20</option>
+          <option value="24">24</option>
+          <option value="32">32</option>
+        </select>&nbsp;&nbsp;&nbsp;
+        <select class="select2 font-change" data-type="color">
+          <option value="#32CD32">#32CD32</option>
+          <option value="#E9967A">#E9967A</option>
+          <option value="#FF8C00">#FF8C00</option>
+          <option value="#00FF00">#00FF00</option>
+          <option value="#000">#000</option>
+          <option value="#00f">#00f</option>
+          <option value="#0f0">#0f0</option>
+          <option value="#f00">#f00</option>
+        </select>
+        <br>
+        <br>
+
+        <select class="select2 font-change" data-type="textAlign">
+          <option value="left">left</option>
+          <option value="center">center</option>
+          <option value="right">right</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+  <hr />
+  
+
+</body>

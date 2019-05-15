@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    background-color: #1d96cc;
+    color: white;
+}
+
+.navbar-inverse {
+    background-color: #1d96cc;
+    height: 73px;
+}
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+   
+  
+   
+body {
+    position: relative;margin: 0;
+}
+
+.add_text {
+  top: 100px;
+}
+.container {
+    height: 66px;
+    width: 100%;
+    background-color: #1d96cc;
+    position: absolute;
+    float: right;
+    overflow: hidden;
+}
+
+.select2 {
+  border-color: rgb(0, 123, 255);
+    padding-top: 4px;
+    padding-bottom: 2px;
+    box-shadow:0px 1px 3px rgb(0, 123, 255);
+}
+
+label {
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    left: 1px;
+    height: 60px;
+    position: absolute;
+    width: 90px;
+}
+
+img#logo {
+  height: 41px;
+  width: 158px;
+}
+
+.form-control {
+  display: none;
+}
+
+.row {
+  position: relative;
+}
+.left_pannel {
+    box-shadow:2px 3px 17px grey;
+    height: 480px; 
+    position: relative;
+}
+
+#curtain {
+  display: block;
+}
+
+#myCanvas {
+    position: relative;
+    /* Temporary SVG loaded from Open Source link 'https://filebin.net" */ 
+    /* background-image: url(https://filebin.net/q8dy9z58a3hpsvdg/SVGResize.svg?t=ykky3mr6);  */
+    
+    /* Local local SVG code : */ 
+    background-image: url(SVGResize.svg); 
+    background-repeat: no-repeat; 
+    margin: 10px;
+    margin-top: -8px;
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.left_panel {
+    text-align: -webkit-right;
+  }
+
+
+.right_pannel {
+    box-shadow:0px 1px 3px grey;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 29px;
+    left:0px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #85b44c;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px greenyellow;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
