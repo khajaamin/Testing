@@ -84,10 +84,8 @@ img#logo {
 #myCanvas {
     position: relative;
     /* Temporary SVG loaded from Open Source link 'https://filebin.net" */ 
-    /* background-image: url(https://filebin.net/q8dy9z58a3hpsvdg/SVGResize.svg?t=ykky3mr6);  */
-    
+    /* background-image: url(https://filebin.net/q8dy9z58a3hpsvdg/SVGResize.svg?t=ykky3mr6);  */  
     /* Local local SVG code : */ 
-    background-image: url(SVGResize.svg); 
     background-repeat: no-repeat; 
     margin: 10px;
     margin-top: -8px;

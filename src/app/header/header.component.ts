@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   
   private json: any;
   marked = false;
-  private textString: string;
+  public textString: string;
   canvas: any;
   title = 'Angular Site';
   selectItemAfterAdded: any;
@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   url : any;
   
   constructor(private httpService: HttpClient) { }
- 
+  private appObject: Function;
   
   
   ngOnInit() {
@@ -39,19 +39,40 @@ export class HeaderComponent implements OnInit {
     $('#text-cont').hide();
     var imageLoader = document.getElementById('imageLoader');
 
-    var canvas = new fabric.Canvas('myCanvas', {
+    this.canvas = new fabric.Canvas('myCanvas', {
     selection: false,
     uniScaleTransform: true
     });
-    canvas.uniScaleTransform = true;
+    this.canvas.uniScaleTransform = true;
 
-var appObject = function() {
+ this.appObject = ()=>{
 
   return {
-    __canvas: canvas,
+    __canvas: this.canvas,
     __tmpgroup: {},
 
     addText: function() {
+
+
+      var imgURL = 'http://i.imgur.com/8rmMZI3.jpg';
+
+      var canvas = new fabric.Canvas('canvas');
+
+      var pugImg = new Image();
+      pugImg.onload = (img)=> {    
+          var pug = new fabric.Image(pugImg, {
+              angle: 45,
+              width: 500,
+              height: 500,
+              left: 50,
+              top: 70,
+              scaleX: .25,
+              scaleY: .25
+          });
+          this.__canvas.add(pug);
+      };
+      pugImg.src = imgURL;
+
       var newID = (new Date()).getTime().toString().substr(5);
       var text = new fabric.IText('New Text', {
         fontFamily: 'Times New Roman',
@@ -64,7 +85,9 @@ var appObject = function() {
       console.log(text.fontFamily);
  
       this.__canvas.add(text);
-      this.addLayer(newID, 'text');
+      //this.addLayer(newID, 'text');
+      console.log("--",this.__canvas.toJSON() ); 
+
     },
     setTextParam: function(param, value) {
       var obj = this.__canvas.getActiveObject(); 
@@ -91,9 +114,9 @@ var appObject = function() {
 
   };
 } 
-$(document).ready(function() {
 
-  var app = appObject();
+
+  var app = this.appObject();
 
   $('.font-change').change(function(event) {
     app.setTextParam($(this).data('type'), $(this).find('option:selected').val());
@@ -106,7 +129,7 @@ $(document).ready(function() {
     app.setTextValue($(this).val());
   })
 
-})
+
 }
   // ZOOM Functions testing
   zoomin(e) {
@@ -147,10 +170,9 @@ onSelectFile(event) {
       // alert(this.url);
     }
     
-    this.canvas = new fabric.Canvas('#myCanvas');
-    fabric.Image.fromURL(this.url, function(img)  {
+    
+    fabric.Image.fromURL(this.url, (img) => {
       this.canvas.add(img);
-      console.log(this.url);
     });
   }
 }

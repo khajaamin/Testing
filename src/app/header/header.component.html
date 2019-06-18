@@ -8,10 +8,6 @@
       <label>{{title}}</label>
     </div>
   </nav>
-
-
-  <br />
-  <br /><br />
   <div class="row">
 
     <div class="col-md-1 col-sm-1 col-lg-1"> </div>
@@ -33,17 +29,17 @@
 
       <div class="row">
         <label class="switch">
-          <input [(ngModel)]="theCheckbox" type="checkbox" (change)="add($event)">
+          <input  type="checkbox" (change)="add($event)">
           <span class="slider round"></span>
         </label>
 
         &nbsp;&nbsp;&nbsp;
         <!-- <button id="zoomin" (click)=zoom($event)>+</button> -->
-        <button id="zoomin" type="button" class="btn btn-default btn-circle btn-lg" (click)=zoomin($event)>+
+        <!-- <button id="zoomin" type="button" class="btn btn-default btn-circle btn-lg" (click)=zoomin($event)>+
         </button>
         &nbsp;&nbsp;
         <button id="zoomout" type="button" class="btn btn-default btn-circle btn-lg" (click)=zoomout($event)>-
-        </button>
+        </button> -->
 
 
         &nbsp;&nbsp; &nbsp;&nbsp;
@@ -52,7 +48,7 @@
         <input type="text" class="form-control" [(ngModel)]="textString">
         <button id="add" class="btn btn-primary add_text btn-lg" type="button">Add Text</button>
 
-         <b></b> Upload File :</b>
+         <b>Upload File :</b>
         <input type="file" id="uploadUserImage" (change)="onSelectFile($event)" value="Add Iamge" #uploadUserImage>
       </div>
       <!--text parameters-->
@@ -108,6 +104,4 @@
     </div>
   </div>
   <hr />
-  
-
 </body>
